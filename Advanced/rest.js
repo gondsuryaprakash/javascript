@@ -14,3 +14,5 @@ const user = {
 const {name, ...rest} = user;
 console.log('name',name);
 console.log('rest',rest); 
+
+
