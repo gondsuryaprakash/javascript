@@ -28,7 +28,7 @@ class LinkedList {
     printNode() {
         let current = this.head; 
         if (current == null) {
-            console.log("Linked List is Empty");
+            console.log('Linked List is Empty');
         } 
         else {
             while (current) {
@@ -42,7 +42,7 @@ class LinkedList {
         let indexOf = 0;
         let prev; 
         if(index <0 || index> this.size) {
-            console.log("Please Enter the valid index");
+            console.log('Please Enter the valid index');
         }
         else {
             let curr = this.head; 
@@ -68,7 +68,7 @@ class LinkedList {
         let indexOf = 0;
         let prev;
         if(curr == null) {
-            console.log("Empty LinkedList");
+            console.log('Empty LinkedList');
         }
         else {
             if(index==0) {
@@ -89,11 +89,22 @@ class LinkedList {
         return curr;
     }
 
+    findMiddleInLinkedList() {
+        let node = this.head;
+        let slow = node;
+        let fast = node; 
+        while(fast!=null && fast.next!=null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow.data;
+    }
+
     removeByData(data) {
         let curr = this.head; 
         let prev;
         if(curr == null) {
-            console.log("Element is not find");
+            console.log('Element is not find');
         } 
         else {
             while(curr) {
@@ -118,14 +129,14 @@ class LinkedList {
 
 const ll = new LinkedList();
 ll.add(10);
-ll.add(20)
-ll.add(234)
-ll.add(22233)
-ll.add(2345)
+ll.add(20);
+ll.add(234);
+ll.add(22233);
+ll.add(2345);
 //ll.removeFromIndex(2);
 ll.printNode();
 //ll.removeFromIndex(2);
-ll.removeByData(234)
+ll.removeByData(234);
 console.log('++++');
-ll.printNode()
+ll.printNode();
 //console.log(ll);
